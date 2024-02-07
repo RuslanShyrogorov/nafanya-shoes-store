@@ -6,7 +6,9 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
         "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
         "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -16,7 +18,9 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "react-hooks",
+        "prettier"
     ],
     "rules": {
         "prettier/prettier": "warn",
