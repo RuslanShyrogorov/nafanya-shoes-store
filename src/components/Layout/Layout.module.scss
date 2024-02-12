@@ -1,0 +1,28 @@
+@import "../../styles";
+.layout{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--bgc-main);
+
+  width: calc(100% - 10px);
+  margin:0 auto;
+
+  @include tablet{
+    width: calc(100% - 20px);
+    margin: 0 auto;
+  }
+  @include large{
+    width: calc(100% - 30px);
+    margin: 0 auto;
+  }
+  @include desktop{
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+}

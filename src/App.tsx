@@ -1,8 +1,20 @@
-import React from "react";
+import React from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+
+import './styles/index.scss';
+import Layout from './components/Layout/Layout';
+import HomePage from './pages/HomePage/HomePage';
 function App() {
-  return <div>
-    <h1>Hello Iryna!!!!!</h1>
-  </div>;
+  return (
+    <>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path='*' element={<Navigate to='/' />} />
+        </Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;

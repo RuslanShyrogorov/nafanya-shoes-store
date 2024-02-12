@@ -1,0 +1,33 @@
+@import "variables";
+
+@mixin temp{
+  border: 2px solid red;
+}
+
+@mixin text{}
+
+
+
+@mixin containerDesktop {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@mixin containerLarge {
+  width: 992px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@mixin containerTablet {
+  width: 768px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+@mixin containerMobile {
+  width: 576px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
