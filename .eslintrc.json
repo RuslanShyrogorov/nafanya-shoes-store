@@ -25,7 +25,7 @@
     "rules": {
         "prettier/prettier": "warn",
         "react/react-in-jsx-scope": "off",
-        "react/jsx-props-no-spreading": "warn",
+        "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": "off",
         "react/prop-types": "off",
         "quotes": ["warn", "single", {"avoidEscape": true}],

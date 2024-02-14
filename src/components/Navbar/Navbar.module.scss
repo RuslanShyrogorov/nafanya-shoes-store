@@ -1,0 +1,34 @@
+@import '../../styles';
+
+.nav{
+
+  &List{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &CloseBtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &CloseIcon{
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.active{
+  color: var(--text-accent);
+}
+
+@include large{
+  .nav{
+    &List{
+      flex-direction: row;
+    }
+  }
+}
+

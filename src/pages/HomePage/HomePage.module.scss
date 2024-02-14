@@ -1,3 +1,15 @@
-.homePage{
+@import '../../styles';
+
+.home{
+  padding: 20px 5px;
+  
+  &Container{
+    @include temp;
+  }
+  
+  &Title{
+    @include title();
+    text-align: center;
+  }
 
 }

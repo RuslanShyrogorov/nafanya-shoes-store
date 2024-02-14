@@ -1,0 +1,14 @@
+@import '../../styles';
+
+.button{
+
+  &Icon{
+    background: inherit;
+    border: none;
+    outline: none;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+}
