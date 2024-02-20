@@ -1,9 +1,17 @@
-:root{
+:root {
   --bgc-main: #FAF7F1;
   --bgc-main1: #B1DEFF;
   --bgc-main2: #A6D5FD;
+  --bgc-main3: #038d93;
+  --bgc-main4: #CED3CA;
+  --bgc-main5: #e6eae2;
 
-  --text-primary:#3E3E3E;
-  --text-secondary:#747474;
-  --text-accent:#40A3F8;
+  --text-primary: #3E3E3E;
+  --text-secondary: #747474;
+  --text-gray: #DDDDDD;
+  --text-accent: #2895f5;
+  --text-hover: #40A3F8;
+
+  --shadow: 0px 4px 68px 0px rgba(33, 33, 33, 0.06);
+  --shadow1: 0px 4px 68px 0px rgba(32, 52, 91, 0.08);
 }

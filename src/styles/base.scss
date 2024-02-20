@@ -8,7 +8,6 @@
 
 
 body {
-  border: 1px solid green;
   padding: 0;
   background-color: #fff;
   color: black;
@@ -48,6 +47,7 @@ li {
 
 button {
   cursor: pointer;
+  outline: none;
 }
 
 a {

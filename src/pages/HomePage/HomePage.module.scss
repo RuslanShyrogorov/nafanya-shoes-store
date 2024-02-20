@@ -1,15 +1,31 @@
 @import '../../styles';
 
-.home{
+.home {
+  max-width: 1600px;
+  height: 550px;
   padding: 20px 5px;
-  
-  &Container{
-    @include temp;
+  //background-color: #c4c4c4;
+  background: linear-gradient(rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)), url('/assets/images/hero.webp') 100%/cover no-repeat;
+
+
+  &Container {
+    @include containerDesktop;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  &Title{
+
+  &Title {
     @include title();
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.62;
     text-align: center;
+    color: #FAF7F1;
+    transform: translateY(65%);
   }
 
 }
+
+

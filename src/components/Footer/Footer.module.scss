@@ -1,3 +1,126 @@
-.footer{
+@import "../../styles";
 
+.footer {
+  @include text;
+  min-height: 4.5rem;
+  background-color: var(--bgc-main);
+  color: var(--text-primary);
+  border-top: 1px solid var(--text-gray);
+
+  &Container {
+    @include containerDesktop;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  &Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  & li {
+    color: var(--text-secondary);
+    line-height: 1.6;
+
+    & a {
+      transition: color 250ms ease-in-out;
+    }
+
+    & a:hover {
+      color: var(--text-hover);
+    }
+  }
+
+  &Title {
+    @include subtitle;
+    margin-bottom: 1rem;
+  }
+}
+
+.social {
+  & ul {
+    align-items: center;
+  }
+
+  &Icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@include large {
+  .footer {
+    &Container {
+      @include containerLarge;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+
+    &Container {
+      @include containerTablet;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    &Wrapper {
+      display: grid;
+      grid-template-columns: minmax(200px, 290px) 1fr;
+      row-gap: 2rem;
+    }
+
+    &Title {
+      text-align: center;
+    }
+
+    & ul {
+      align-items: center;
+      gap: 8px;
+    }
+
+    & li {
+      line-height: 1.2;
+
+      & a {
+        display: inline-block;
+        text-align: center;
+        width: 280px;
+      }
+    }
+
+  }
+}
+
+@include mobile {
+  .footer {
+
+    &Container {
+      @include containerMobile;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    &Wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+
+    &Title {
+      margin-bottom: 0.5rem;
+    }
+
+
+  }
 }

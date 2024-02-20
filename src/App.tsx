@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import './styles/index.scss';
 import Layout from './components/Layout/Layout';
@@ -7,6 +7,9 @@ import HomePage from './pages/HomePage/HomePage';
 import ShoesPage from './pages/ShoesPage/ShoesPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 import AboutPage from './pages/AboutPage/AboutPage';
+import BasketPage from './pages/BasketPage/BasketPage';
+import OfferPage from './pages/OfferPage/OfferPage';
+
 function App() {
   return (
     <>
@@ -16,6 +19,8 @@ function App() {
           <Route path='shoes' element={<ShoesPage />} />
           <Route path='payment' element={<PaymentPage />} />
           <Route path='about' element={<AboutPage />} />
+          <Route path='basket' element={<BasketPage />} />
+          <Route path='offer' element={<OfferPage />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>

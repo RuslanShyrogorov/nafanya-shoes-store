@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import cn from 'classnames';
 
 import Button from '../Button/Button';
@@ -14,25 +15,44 @@ const menuList = [
 ];
 
 interface INavbarProps {
-  showMobileMenu: boolean;
-  handleClickMobileMenu: () => void;
+  className?: string;
 }
 
-function Navbar({ showMobileMenu, handleClickMobileMenu }: INavbarProps) {
-  const handlerClickMobileLink = () => {
-    if (showMobileMenu) {
-      handleClickMobileMenu();
-    }
+function Navbar({ className }: INavbarProps) {
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(true);
+
+  const handleClickMobileMenu = () => {
+    setShowMobileMenu((prev) => !prev);
   };
 
   return (
     <>
-      <nav className={s.nav}>
-        <ul className={s.navList}>
+      <nav className={cn(s.nav, className)}>
+        <Button
+          variant='icon'
+          onClick={handleClickMobileMenu}
+          type='button'
+          className={s.navBurgerBtn}
+        >
+          <FaBars width='24' height='24' className={s.navBurgerIcon} />
+        </Button>
+
+        <div
+          className={cn(s.navListMobileCover, {
+            [s.navListMobileCoverShow]: showMobileMenu,
+          })}
+          onClick={handleClickMobileMenu}
+        ></div>
+
+        <ul
+          className={cn(s.navList, {
+            [s.navListShow]: showMobileMenu,
+          })}
+        >
           {menuList.map(({ id, title, path }) => (
             <li key={id}>
               <NavLink
-                onClick={handlerClickMobileLink}
+                onClick={handleClickMobileMenu}
                 to={path}
                 className={({ isActive }) => cn({ [s.active]: isActive })}
               >
@@ -40,8 +60,7 @@ function Navbar({ showMobileMenu, handleClickMobileMenu }: INavbarProps) {
               </NavLink>
             </li>
           ))}
-        </ul>
-        {showMobileMenu && (
+
           <Button
             variant='icon'
             onClick={handleClickMobileMenu}
@@ -50,7 +69,7 @@ function Navbar({ showMobileMenu, handleClickMobileMenu }: INavbarProps) {
           >
             <FaTimes className={s.navCloseIcon} />
           </Button>
-        )}
+        </ul>
       </nav>
     </>
   );

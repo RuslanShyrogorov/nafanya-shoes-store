@@ -1,14 +1,15 @@
 @import '../../styles';
 
-.button{
+.button {
 
-  &Icon{
+  &Icon {
     background: inherit;
     border: none;
     outline: none;
+    padding: 0;
   }
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
