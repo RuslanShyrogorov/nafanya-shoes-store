@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/nafanya-shoes-store/static/css/main.a2cfcc45.css",
-    "main.js": "/nafanya-shoes-store/static/js/main.0e15907b.js",
+    "main.css": "/nafanya-shoes-store/static/css/main.565fd1b0.css",
+    "main.js": "/nafanya-shoes-store/static/js/main.4bfda97e.js",
     "static/media/hero.webp": "/nafanya-shoes-store/static/media/hero.75cf2e71409855056a7b.webp",
     "index.html": "/nafanya-shoes-store/index.html",
-    "main.a2cfcc45.css.map": "/nafanya-shoes-store/static/css/main.a2cfcc45.css.map",
-    "main.0e15907b.js.map": "/nafanya-shoes-store/static/js/main.0e15907b.js.map"
+    "main.565fd1b0.css.map": "/nafanya-shoes-store/static/css/main.565fd1b0.css.map",
+    "main.4bfda97e.js.map": "/nafanya-shoes-store/static/js/main.4bfda97e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2cfcc45.css",
-    "static/js/main.0e15907b.js"
+    "static/css/main.565fd1b0.css",
+    "static/js/main.4bfda97e.js"
   ]
 }
