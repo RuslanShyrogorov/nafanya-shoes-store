@@ -1,11 +1,11 @@
 @import '../../styles';
 
 .header {
-  position: fixed;
+  //position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 5;
+  //top: 0;
+  //left: 0;
+  //z-index: 5;
   border-bottom: 1px solid var(--text-gray);
   background-color: var(--bgc-main);
 
@@ -22,6 +22,15 @@
     width: 195px;
     height: 55px;
     order: 1;
+  }
+
+  & address li {
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+  }
+
+  & address li:last-child {
+    margin-bottom: 0;
   }
 
   &Nav {
@@ -56,6 +65,20 @@
   }
 }
 
+// Large
+@include large {
+  .container {
+    @include containerLarge
+  }
+
+  .header {
+
+    & address li {
+      font-size: 0.9rem;
+    }
+  }
+}
+
 // Tablet
 @include tablet {
   .container {
@@ -66,6 +89,10 @@
       width: 170px;
       height: 45px;
       order: 1;
+    }
+
+    & address {
+      margin-left: auto;
     }
 
     &Nav {

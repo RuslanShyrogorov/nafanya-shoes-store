@@ -1,3 +1,47 @@
-.shoesPage{
+@import '../../styles';
 
+.shoes {
+  &Container {
+    @include containerDesktop;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &Title {
+    @include title;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &BtnList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 20px 30px;
+  }
+
+  &CardList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    row-gap: 25px;
+  }
+
+  &BtnActive {
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 3px;
+      border-radius: 2px;
+      background-color: var(--bgc-brown);
+    }
+  }
 }

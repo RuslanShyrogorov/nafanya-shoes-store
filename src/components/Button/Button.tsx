@@ -10,6 +10,7 @@ interface IButtonProps {
   className?: string;
   children: React.ReactElement | React.ReactNode;
 }
+
 function Button({
   type = 'button',
   variant,
@@ -25,6 +26,8 @@ function Button({
       className={cn(
         s.button,
         { [s.buttonIcon]: variant === 'icon' },
+        { [s.buttonText]: variant === 'text' },
+        { [s.buttonOutlined]: variant === 'outlined' },
         className
       )}
       {...props}

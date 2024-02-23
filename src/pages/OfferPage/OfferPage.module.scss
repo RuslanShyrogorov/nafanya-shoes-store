@@ -2,7 +2,13 @@
 
 .offer {
   @include text;
-  text-align: justify;
+
+
+  &Container {
+    @include containerDesktop;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   & h3 {
     @include title;
@@ -45,8 +51,4 @@
   }
 }
 
-.container {
-  @include containerDesktop;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+

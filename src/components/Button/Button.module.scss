@@ -1,6 +1,9 @@
 @import '../../styles';
 
 .button {
+  &:hover {
+    cursor: pointer;
+  }
 
   &Icon {
     background: inherit;
@@ -9,7 +12,25 @@
     padding: 0;
   }
 
-  &:hover {
-    cursor: pointer;
+  &Outlined {
+    background: inherit;
+    color: var(--bgc-brown);
+    outline: 1px solid var(--bgc-brown);
+    border-radius: 20px;
+    transition: all var(--time-animation) var(--animation);
+
+    &:hover, &:focus {
+      color: white;
+      background: var(--bgc-btn);
+      outline: inherit;
+    }
   }
+
+  &Text {
+    //position: relative;
+    background: inherit;
+    color: var(--bgc-brown);
+    font-size: 1.1rem;
+  }
+
 }

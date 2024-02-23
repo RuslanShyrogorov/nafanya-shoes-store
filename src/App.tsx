@@ -9,6 +9,7 @@ import PaymentPage from './pages/PaymentPage/PaymentPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import BasketPage from './pages/BasketPage/BasketPage';
 import OfferPage from './pages/OfferPage/OfferPage';
+import GuaranteePage from './pages/GuaranteePage/GuaranteePage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='about' element={<AboutPage />} />
           <Route path='basket' element={<BasketPage />} />
           <Route path='offer' element={<OfferPage />} />
+          <Route path='guarantee' element={<GuaranteePage />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>

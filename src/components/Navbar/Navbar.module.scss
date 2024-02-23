@@ -76,11 +76,11 @@ nav ul li a:not(.active):hover {
       border-bottom-left-radius: 1rem;
       border-top-left-radius: 1rem;
       min-width: 320px;
-      height: 100vh;
+      //height: 100vh;
       position: absolute;
       top: 0;
       right: 0;
-      transform: translateX(100%);
+      transform: translateY(-100%);
       background-color: var(--bgc-main);
       z-index: 10;
       box-shadow: var(--shadow1);
@@ -88,7 +88,7 @@ nav ul li a:not(.active):hover {
     }
 
     &ListShow {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 }

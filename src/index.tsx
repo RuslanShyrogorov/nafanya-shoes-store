@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/nafanya-shoes-store'>
       <App />
     </BrowserRouter>
   </React.StrictMode>

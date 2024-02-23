@@ -25,6 +25,9 @@ function Footer() {
                   <a href='tel:+380965386648'>+38 (096) 538‑66-48</a>
                 </li>
                 <li>
+                  <a href='tel:+380983033777'>+38 (098) 30-33-777</a>
+                </li>
+                <li>
                   <a href='mailto:webmaster@example.com'>
                     webmaster@example.com
                   </a>
@@ -52,7 +55,7 @@ function Footer() {
                 <Link to='sizes'>Як обрати розмір</Link>
               </li>
               <li>
-                <Link to='garanty'>Гарантія</Link>
+                <Link to='guarantee'>Гарантія</Link>
               </li>
             </ul>
           </div>

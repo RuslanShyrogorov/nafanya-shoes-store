@@ -1,0 +1,180 @@
+{
+  "shoes": [
+    {
+      "id": "940",
+      "name": "Ортопедичні черевики \"Dr.Mymi\"",
+      "description": "Демісезонні черевички для малюків",
+      "extraDescription": "Каблук Томаса,устілка-супінатор. Хороший, стійкий задник відмінно фіксує стопу дитини у правильному положенні",
+      "material": "шкіра, усередині утеплювач",
+      "picture": [
+        "https://i.postimg.cc/NGPkh161/940.jpg"
+      ],
+      "article": 940,
+      "price": 840,
+      "oldPrice": 1000,
+      "sizes": {
+        "22": 4
+      },
+      "quantity": 4,
+      "gender": [
+        "girl",
+        "boy"
+      ],
+      "season": "демісезонні"
+    },
+    {
+      "id": "307",
+      "name": "Ортопедичні туфлі \"Dr.Mymi\"",
+      "description": "Туфлі для дівчаток",
+      "extraDescription": "Каблук Томаса, супінатор.",
+      "material": "шкіра",
+      "picture": [
+        "https://i.postimg.cc/rmfCw4v2/307.jpg"
+      ],
+      "article": 307,
+      "price": 840,
+      "oldPrice": 970,
+      "sizes": {
+        "24": 5,
+        "25": 7
+      },
+      "quantity": 12,
+      "gender": [
+        "girl"
+      ],
+      "season": "демісезонні"
+    },
+    {
+      "id": "1673",
+      "name": "Весняні черевички \"Absolute\"",
+      "description": "Черевички для дівчаток",
+      "extraDescription": "Жорсткий задник, устілка-супінатор.",
+      "material": "шкіра, замш",
+      "picture": [
+        "https://i.postimg.cc/tTqNbkvz/1673.jpg"
+      ],
+      "article": 1673,
+      "price": 1195,
+      "oldPrice": 0,
+      "sizes": {
+        "27": 5,
+        "28": 7,
+        "39": 3
+      },
+      "quantity": 15,
+      "gender": [
+        "girl"
+      ],
+      "season": "демісезонні"
+    },
+    {
+      "id": "322",
+      "name": "Ортопедичні туфлі \"Dr.Mymi\"",
+      "description": "Туфлі для дівчаток",
+      "extraDescription": "Жорсткий задник, каблук Томаса, супінатор.",
+      "material": "шкіра",
+      "picture": [
+        "https://i.postimg.cc/Gt9P82C8/322.jpg"
+      ],
+      "article": 322,
+      "price": 840,
+      "oldPrice": 0,
+      "sizes": {
+        "22": 5
+      },
+      "quantity": 5,
+      "gender": [
+        "girl"
+      ],
+      "season": "демісезонні"
+    },
+    {
+      "id": "1",
+      "name": "Ортопедичні сандалі \"Таші Орто\"",
+      "description": "Cандалі",
+      "extraDescription": "Каблук Томаса, супінатор.",
+      "material": "шкіра",
+      "picture": [
+        "https://i.postimg.cc/rsb1SkVh/1.jpg"
+      ],
+      "article": 1,
+      "price": 950,
+      "oldPrice": 0,
+      "sizes": {
+        "18": 7
+      },
+      "quantity": 11,
+      "gender": [
+        "girl",
+        "boy"
+      ],
+      "season": "літо"
+    },
+    {
+      "id": "16731",
+      "name": "Весняні черевички \"Absolute\"",
+      "description": "Черевички для дівчаток",
+      "extraDescription": "Жорсткий задник, устілка-супінатор.",
+      "material": "шкіра, замш",
+      "picture": [
+        "https://i.postimg.cc/tTqNbkvz/1673.jpg"
+      ],
+      "article": 16731,
+      "price": 1195,
+      "oldPrice": 0,
+      "sizes": {
+        "27": 5,
+        "28": 7,
+        "39": 3
+      },
+      "quantity": 15,
+      "gender": [
+        "girl"
+      ],
+      "season": "демісезонні"
+    },
+    {
+      "id": "3221",
+      "name": "Ортопедичні туфлі \"Dr.Mymi\"",
+      "description": "Туфлі для дівчаток",
+      "extraDescription": "Жорсткий задник, каблук Томаса, супінатор.",
+      "material": "шкіра",
+      "picture": [
+        "https://i.postimg.cc/Gt9P82C8/322.jpg"
+      ],
+      "article": 3221,
+      "price": 840,
+      "oldPrice": 0,
+      "sizes": {
+        "22": 5
+      },
+      "quantity": 5,
+      "gender": [
+        "girl"
+      ],
+      "season": "демісезонні"
+    },
+    {
+      "id": "11",
+      "name": "Ортопедичні сандалі \"Таші Орто\"",
+      "description": "Cандалі",
+      "extraDescription": "Каблук Томаса, супінатор.",
+      "material": "шкіра",
+      "picture": [
+        "https://i.postimg.cc/rsb1SkVh/1.jpg"
+      ],
+      "article": 11,
+      "price": 950,
+      "oldPrice": 0,
+      "sizes": {
+        "18": 7
+      },
+      "quantity": 7,
+      "gender": [
+        "girl",
+        "boy"
+      ],
+      "season": "літо"
+    }
+  ]
+}

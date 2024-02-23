@@ -14,7 +14,7 @@ function OfferPage() {
 
   return (
     <section className={s.offer}>
-      <div className={s.container}>
+      <div className={s.offerContainer}>
         <h3>Договір публічної оферти</h3>
         <p>на замовлення, придбання, продаж та доставку товарів</p>
         <ol>

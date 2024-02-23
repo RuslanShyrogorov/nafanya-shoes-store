@@ -11,7 +11,7 @@ const menuList = [
   { id: '1', title: 'Головна', path: '/' },
   { id: '2', title: 'Взуття', path: '/shoes' },
   { id: '3', title: 'Оплата та доставка', path: 'payment' },
-  { id: '4', title: 'Про нас', path: '/about' },
+  // { id: '4', title: 'Про нас', path: '/about' },
 ];
 
 interface INavbarProps {
@@ -19,7 +19,7 @@ interface INavbarProps {
 }
 
 function Navbar({ className }: INavbarProps) {
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(true);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   const handleClickMobileMenu = () => {
     setShowMobileMenu((prev) => !prev);
