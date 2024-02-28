@@ -16,17 +16,22 @@
   &BtnList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: 15px;
-    margin: 0 0 20px 30px;
+    margin: 0 0 20px 0;
   }
 
   &CardList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 270px));
     gap: 15px;
     row-gap: 25px;
+  }
+
+  &Btn:first-letter {
+    text-transform: capitalize;
   }
 
   &BtnActive {

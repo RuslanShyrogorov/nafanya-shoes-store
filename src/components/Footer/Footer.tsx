@@ -28,9 +28,7 @@ function Footer() {
                   <a href='tel:+380983033777'>+38 (098) 30-33-777</a>
                 </li>
                 <li>
-                  <a href='mailto:webmaster@example.com'>
-                    webmaster@example.com
-                  </a>
+                  <a href='mailto:magnafanya@gmail.com'>magnafanya@gmail.com</a>
                 </li>
                 <li>
                   <a

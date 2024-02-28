@@ -1,3 +1,36 @@
-.paymentPage{
+@import "../../styles";
 
+.payment {
+  @include text;
+
+
+  &Container {
+    @include containerDesktop;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  & h3 {
+    @include title;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  & ul {
+    line-height: 2;
+  }
+
+  & p {
+    margin-bottom: 1rem;
+  }
+
+  & q {
+    quotes: '«' '»';;
+  }
+
+  & li {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
 }

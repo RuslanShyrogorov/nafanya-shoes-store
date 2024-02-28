@@ -2,22 +2,37 @@ import { useState } from 'react';
 import cn from 'classnames';
 import data from '../../data/shoes.json';
 
-import { IShoe } from '../../types/types';
-
 import Button from '../../components/Button/Button';
 import ItemCard from '../../components/ItemCard/ItemCard';
 
 import s from './ShoesPage.module.scss';
 
-const buttonList = ['Дівчата', 'Хлопчики', 'Устілки', 'Розпродаж'];
+const buttonList = ['дівчата', 'хлопчики', 'устілки', 'капці', 'розпродаж'];
 
 function ShoesPage() {
-  const [activeBtnCategory, setActiveBtnCategory] = useState('Дівчата');
-  const items: IShoe[] = data.shoes;
+  const [products, setProducts] = useState(data.shoes);
+  const [activeBtnCategory, setActiveBtnCategory] = useState('all');
 
-  const handleClick = () => {
-    console.log('Click!');
+  const filterByCategory = (category: string) => {
+    if (category === 'all') {
+      return products;
+    } else if (category === 'дівчата') {
+      return products.filter((item) => item.gender.includes('girl'));
+    } else if (category === 'хлопчики') {
+      return products.filter((item) => item.gender.includes('boy'));
+    } else if (category === 'розпродаж') {
+      return products.filter((item) => item.oldPrice > 0);
+    } else if (category === 'устілки') {
+      return products.filter((item) => item.type === 'insoles');
+    } else if (category === 'капці') {
+      return products.filter((item) => item.type === 'slippers');
+    }
   };
+
+  const visibleShoes = filterByCategory(activeBtnCategory);
+  if (!visibleShoes) {
+    return <p>Loading</p>;
+  }
 
   return (
     <section className={s.shoes}>
@@ -27,7 +42,7 @@ function ShoesPage() {
           {buttonList.map((item, idx) => (
             <li key={idx}>
               <Button
-                className={cn({
+                className={cn(s.shoesBtn, {
                   [s.shoesBtnActive]: activeBtnCategory === item,
                 })}
                 variant='text'
@@ -39,7 +54,7 @@ function ShoesPage() {
           ))}
         </ul>
         <ul className={s.shoesCardList}>
-          {items.map((item) => (
+          {visibleShoes.map((item) => (
             <li key={item.id}>
               <ItemCard {...item} />
             </li>

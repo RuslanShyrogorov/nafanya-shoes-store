@@ -70,13 +70,13 @@ function ItemCard({
           <p className={s.itemCardPrice}>
             Ціна: {price} грн.
             {
-              <span
+              <s
                 className={cn(s.itemCardPriceOld, {
                   [s.itemCardPriceOldShow]: oldPrice,
                 })}
               >
                 {oldPrice} грн.
-              </span>
+              </s>
             }
           </p>
         </div>

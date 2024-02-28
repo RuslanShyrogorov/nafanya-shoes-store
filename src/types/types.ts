@@ -7,9 +7,10 @@ export interface IShoe {
   picture: string[];
   article: number;
   price: number;
-  oldPrice?: number;
+  oldPrice: number;
   sizes: ISizes;
   quantity?: number;
+  type: string;
   gender: string[];
   season: string;
 }
