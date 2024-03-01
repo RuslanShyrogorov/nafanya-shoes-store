@@ -1,0 +1,12 @@
+@import '../../styles';
+
+.oldPrice {
+  display: none;
+
+  &Show {
+    display: inline-block;
+    margin-left: 15px;
+    color: var(--red);
+    font-style: italic;
+  }
+}

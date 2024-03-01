@@ -6,6 +6,7 @@ import s from './Button.module.scss';
 interface IButtonProps {
   type?: 'button' | 'submit';
   variant: string;
+  disabled?: boolean;
   onClick: () => void;
   className?: string;
   children: React.ReactElement | React.ReactNode;
@@ -17,6 +18,7 @@ function Button({
   onClick,
   className,
   children,
+  disabled,
   ...props
 }: IButtonProps) {
   return (
@@ -28,8 +30,10 @@ function Button({
         { [s.buttonIcon]: variant === 'icon' },
         { [s.buttonText]: variant === 'text' },
         { [s.buttonOutlined]: variant === 'outlined' },
+        { [s.buttonContained]: variant === 'contained' },
         className
       )}
+      disabled={disabled}
       {...props}
     >
       {children}

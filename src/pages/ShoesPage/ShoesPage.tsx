@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import cn from 'classnames';
 import data from '../../data/shoes.json';
-
 import Button from '../../components/Button/Button';
 import ItemCard from '../../components/ItemCard/ItemCard';
-
 import s from './ShoesPage.module.scss';
+import Loader from '../../components/Loader/Loader';
 
 const buttonList = ['дівчата', 'хлопчики', 'устілки', 'капці', 'розпродаж'];
 
@@ -31,7 +30,7 @@ function ShoesPage() {
 
   const visibleShoes = filterByCategory(activeBtnCategory);
   if (!visibleShoes) {
-    return <p>Loading</p>;
+    return <Loader />;
   }
 
   return (

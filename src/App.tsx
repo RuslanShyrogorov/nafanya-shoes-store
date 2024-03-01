@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import BasketPage from './pages/BasketPage/BasketPage';
 import OfferPage from './pages/OfferPage/OfferPage';
 import GuaranteePage from './pages/GuaranteePage/GuaranteePage';
+import DetailedCardPage from './pages/DetailedPage/DetailedCardPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path='shoes' element={<ShoesPage />} />
+          <Route path='shoes/:cardId' element={<DetailedCardPage />} />
           <Route path='payment' element={<PaymentPage />} />
           <Route path='about' element={<AboutPage />} />
           <Route path='basket' element={<BasketPage />} />

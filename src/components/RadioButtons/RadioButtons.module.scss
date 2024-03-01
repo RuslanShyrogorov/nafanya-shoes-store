@@ -1,0 +1,14 @@
+@import '../../styles';
+
+.radioButtons {
+
+  & label {
+    cursor: pointer;
+
+    & input {
+      accent-color: var(--bgc-brown);
+    }
+  }
+
+
+}

@@ -26,8 +26,22 @@
     }
   }
 
+  &Contained {
+    background: var(--bgc-btn);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    transition: all var(--time-animation) var(--animation);
+
+    &:hover, &:focus {
+      color: var(--bgc-brown);
+      background: inherit;
+      outline: 1px solid var(--bgc-brown);
+    }
+  }
+
   &Text {
-    //position: relative;
     background: inherit;
     color: var(--bgc-brown);
     font-size: 1.1rem;

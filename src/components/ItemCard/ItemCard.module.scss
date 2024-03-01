@@ -10,7 +10,6 @@
   transition: box-shadow var(--time-animation) var(--animation);
 
   &:hover, &:focus {
-    box-shadow: var(--shadow-card);
     cursor: pointer;
   }
 
