@@ -76,7 +76,7 @@ function ItemCard({
           {shownSizes(sizes)}
           <div>
             <p className={s.itemCardPrice}>
-              Ціна: {price} грн.
+              Ціна: {price.toLocaleString('ru')} грн.
               <OldPrice oldPrice={oldPrice} />
             </p>
           </div>
