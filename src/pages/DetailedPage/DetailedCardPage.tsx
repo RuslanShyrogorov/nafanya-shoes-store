@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import data from '../../data/shoes.json';
-import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
-import Loader from '../../components/Loader/Loader';
+import { FiArrowLeft, FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import OldPrice from '../../components/OldPrice/OldPrice';
 import Button from '../../components/Button/Button';
 import RadioButtons from '../../components/RadioButtons/RadioButtons';
@@ -16,7 +15,9 @@ function DetailedCardPage() {
   const cardInfo = data.shoes.find((card) => card.id === cardId);
 
   if (!cardInfo) {
-    return <Loader />;
+    // !===============
+    // return <Loader />;
+    return null;
   }
   const {
     name,
@@ -35,7 +36,12 @@ function DetailedCardPage() {
   return (
     <div className={s.detailed}>
       <div className={s.detailedContainer}>
-        <Button variant='text' onClick={() => navigate(-1)}>
+        <Button
+          className={s.detailedBtnBack}
+          variant='text'
+          onClick={() => navigate(-1)}
+        >
+          <FiArrowLeft />
           Назад
         </Button>
         <div className={s.detailedCard}>

@@ -2,11 +2,23 @@
 
 .radioButtons {
 
+  &Item {
+    margin-top: 5px;
+  }
+
   & label {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
     & input {
       accent-color: var(--bgc-brown);
+      margin: 0;
+    }
+
+    &span {
+      margin-right: 0;
     }
   }
 

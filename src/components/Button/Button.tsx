@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  MouseEvent,
+} from 'react';
 import cn from 'classnames';
 
 import s from './Button.module.scss';
 
-interface IButtonProps {
+export interface IButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   type?: 'button' | 'submit';
   variant: string;
   disabled?: boolean;
-  onClick: () => void;
+  onClick: (e: MouseEvent) => void;
   className?: string;
   children: React.ReactElement | React.ReactNode;
 }

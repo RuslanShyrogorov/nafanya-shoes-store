@@ -12,7 +12,7 @@ function Header() {
       <div className={s.headerContainer}>
         <Logo className={s.headerLogo} width='145' height='40' />
         <address>
-          <ul>
+          <ul className={s.headerPhones}>
             <li>
               <a href='tel:+380965386648'>+38 (096) 538‑66-48</a>
             </li>
