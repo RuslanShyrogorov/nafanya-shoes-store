@@ -73,7 +73,7 @@ function DetailedCardPage() {
             </div>
             <p className={s.detailedPrice}>
               <span>Ціна: </span>
-              {price} грн.
+              {price.toLocaleString('ru')} грн.
               <OldPrice oldPrice={oldPrice} className={s.detailedOldPrice} />
             </p>
             <div className={s.detailedQuantity}>

@@ -17,7 +17,7 @@ function OldPrice({ oldPrice, className }: IOldPriceProps) {
         className
       )}
     >
-      {oldPrice} грн.
+      {oldPrice?.toLocaleString('ru')} грн.
     </s>
   );
 }

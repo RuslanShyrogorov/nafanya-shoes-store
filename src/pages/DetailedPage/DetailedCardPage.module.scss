@@ -92,11 +92,6 @@
       width: 24px;
       height: 24px;
       color: var(--bgc-brown);
-      transition: transform var(--time-animation) var(--animation);
-
-      &:hover {
-        transform: scale(1.05);
-      }
     }
   }
 

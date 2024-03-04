@@ -23,6 +23,11 @@
 
   & p {
     margin-bottom: 1rem;
+    line-height: 2.0;
+
+    & span {
+      font-weight: 600;
+    }
   }
 
   & q {
