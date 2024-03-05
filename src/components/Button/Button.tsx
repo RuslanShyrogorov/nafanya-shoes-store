@@ -38,7 +38,10 @@ function Button({
         { [s.buttonIcon]: variant === 'icon' },
         { [s.buttonText]: variant === 'text' },
         { [s.buttonOutlined]: variant === 'outlined' },
-        { [s.buttonContained]: variant === 'contained' },
+        {
+          [s.buttonContained]: variant === 'contained',
+          [s.buttonContainedDisabled]: disabled,
+        },
         className
       )}
       disabled={disabled}

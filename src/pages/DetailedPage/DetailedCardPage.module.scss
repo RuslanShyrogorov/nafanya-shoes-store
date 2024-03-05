@@ -55,7 +55,7 @@
   & ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
   }
 
   &Price {
@@ -148,7 +148,7 @@
     }
 
     &WrapperInfo {
-      font-size: 0.9rem;
+      font-size: 1rem;
 
       & h2 {
         letter-spacing: 0.2px;
@@ -156,33 +156,33 @@
       }
 
       & span {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
     }
 
     &Price {
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 
     &OldPrice {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     &Quantity {
 
       & p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
       }
 
       &Btn {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
       }
 
       &Icon {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
       }
     }
   }

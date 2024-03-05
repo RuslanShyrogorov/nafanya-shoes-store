@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import { ISizes } from '../../types/types';
-import Button from '../Button/Button';
 
 import s from './ItemCard.module.scss';
 import { Link } from 'react-router-dom';
@@ -80,13 +79,6 @@ function ItemCard({
               <OldPrice oldPrice={oldPrice} />
             </p>
           </div>
-          <Button
-            className={s.itemCardBtn}
-            variant='outlined'
-            onClick={() => handleButtonClick}
-          >
-            До кошика
-          </Button>
         </div>
       </Link>
     </div>

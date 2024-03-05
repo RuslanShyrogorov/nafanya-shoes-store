@@ -45,9 +45,15 @@
     border-radius: 20px;
     transition: all var(--time-animation) var(--animation);
 
-    &:hover, &:focus {
+    &:hover:not(&Disabled), &:focus {
       color: var(--bgc-brown);
       background: inherit;
+    }
+
+    &Disabled {
+      background: var(--text-gray);
+      border: 1px solid var(--text-gray);
+      color: var(--bgc-brown);
     }
   }
 
