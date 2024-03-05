@@ -102,6 +102,7 @@ function DetailedCardPage() {
             <Button
               className={s.detailedBtn}
               variant='contained'
+              disabled={selectedSize === ''}
               onClick={() => {
                 console.log('hhh');
               }}
