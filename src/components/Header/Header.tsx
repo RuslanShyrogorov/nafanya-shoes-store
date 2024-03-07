@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 import { BsCart } from 'react-icons/bs';
 
+import { basketStore } from '../../store/basketStore';
 import Logo from '../Logo/Logo';
 import Navbar from '../Navbar/Navbar';
 
 import s from './Header.module.scss';
 
 function Header() {
+  const { totalItems } = basketStore;
   return (
     <header className={s.header}>
       <div className={s.headerContainer}>
@@ -27,7 +30,7 @@ function Header() {
           <Link to='basket'>
             <BsCart className={s.basketImg} />
             <div className={s.basketLabel}>
-              <span>0</span>
+              <span>{totalItems}</span>
             </div>
           </Link>
         </div>
@@ -36,4 +39,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default observer(Header);

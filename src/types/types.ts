@@ -24,3 +24,15 @@ export interface ISizes {
   '28'?: number;
   '39'?: number;
 }
+
+export interface IShoesOfBasket {
+  id: string;
+  extraId: string;
+  name: string;
+  picture: string;
+  article: number;
+  price: number;
+  selectedSize: string;
+  selectedQuantity: number;
+  orderPrice: number;
+}

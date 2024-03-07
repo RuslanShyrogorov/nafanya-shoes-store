@@ -20,6 +20,15 @@
   line-height: 1.2;
 }
 
+@mixin wrapperCardBascet {
+  margin: 0 auto;
+  padding: 15px 15px;
+  max-width: 80%;
+  box-shadow: var(--shadow-detailed-card);
+  border-radius: 5px;
+  position: relative;
+}
+
 
 @mixin containerDesktop {
   max-width: 1230px;

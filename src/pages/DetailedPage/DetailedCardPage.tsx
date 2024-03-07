@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import data from '../../data/shoes.json';
+import { observer } from 'mobx-react-lite';
+
 import { FiArrowLeft, FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
+
 import OldPrice from '../../components/OldPrice/OldPrice';
 import Button from '../../components/Button/Button';
 import RadioButtons from '../../components/RadioButtons/RadioButtons';
+import Loader from '../../components/Loader/Loader';
+
+import data from '../../data/shoes.json';
+import { basketStore } from '../../store/basketStore';
+import { IShoesOfBasket } from '../../types/types';
+
 import s from './DetailedCardPage.module.scss';
 
 function DetailedCardPage() {
@@ -13,13 +21,13 @@ function DetailedCardPage() {
   const { cardId } = useParams();
   const navigate = useNavigate();
   const cardInfo = data.shoes.find((card) => card.id === cardId);
+  const { addItemToBasket } = basketStore;
 
   if (!cardInfo) {
-    // !===============
-    // return <Loader />;
-    return null;
+    return <Loader />;
   }
   const {
+    id,
     name,
     description,
     extraDescription,
@@ -32,6 +40,22 @@ function DetailedCardPage() {
   } = cardInfo;
 
   const sizesBtn = Object.keys(sizes);
+
+  const handleAddToBasketClick = () => {
+    const selectedShoes: IShoesOfBasket = {
+      id,
+      extraId: id + selectedSize,
+      name,
+      picture: picture[0],
+      price,
+      article,
+      selectedSize,
+      selectedQuantity: quantity,
+      orderPrice: quantity * price,
+    };
+
+    addItemToBasket(selectedShoes);
+  };
 
   return (
     <div className={s.detailed}>
@@ -103,9 +127,7 @@ function DetailedCardPage() {
               className={s.detailedBtn}
               variant='contained'
               disabled={selectedSize === ''}
-              onClick={() => {
-                console.log('hhh');
-              }}
+              onClick={handleAddToBasketClick}
             >
               До кошика
             </Button>
@@ -116,4 +138,4 @@ function DetailedCardPage() {
   );
 }
 
-export default DetailedCardPage;
+export default observer(DetailedCardPage);
