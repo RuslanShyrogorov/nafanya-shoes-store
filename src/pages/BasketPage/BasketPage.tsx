@@ -1,19 +1,25 @@
-import { BsCart, BsTrash3 } from 'react-icons/bs';
-
-import BasketItem from '../../components/BasketItem/BasketItem';
-import s from './BasketPage.module.scss';
-
-import data from '../../data/shoes.json';
-import Button from '../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { toJS } from 'mobx';
+
+import { BsCart, BsTrash3 } from 'react-icons/bs';
 import { FiArrowLeft } from 'react-icons/fi';
 
-const item1 = data.shoes[0];
-const item2 = data.shoes[1];
-const item3 = data.shoes[2];
+import { basketStore } from '../../store/basketStore';
+import Button from '../../components/Button/Button';
+import EmptyBasket from '../../components/EmptyBasket/EmptyBasket';
+import BasketItem from '../../components/BasketItem/BasketItem';
+
+import s from './BasketPage.module.scss';
 
 function BasketPage() {
   const navigate = useNavigate();
+  const { clearBasket, sumPrice, items } = basketStore;
+  const itemsToJs = toJS(items);
+
+  if (!itemsToJs.length) {
+    return <EmptyBasket />;
+  }
 
   return (
     <div className={s.basket}>
@@ -33,23 +39,24 @@ function BasketPage() {
             <Button
               className={s.basketHeaderBtn}
               variant={'text'}
-              onClick={() => {
-                console.log('clean basket');
-              }}
+              onClick={clearBasket}
             >
               <BsTrash3 className={s.basketHeaderIconTrash} />
               <span>Очистити кошик</span>
             </Button>
           </div>
           <ul className={s.basketList}>
-            <BasketItem {...item1} />
-            <BasketItem {...item2} />
-            <BasketItem {...item3} />
+            {itemsToJs.map((item) => (
+              <li key={item.extraId}>
+                <BasketItem {...item} />
+              </li>
+            ))}
+            {/*<EmptyBasket />*/}
           </ul>
           <div className={s.basketFooter}>
             <p>
-              Сумма замовлення:{' '}
-              <span>{data.shoes[0].price.toLocaleString('ru')} грн.</span>
+              Сумма замовлення:
+              <span>{sumPrice.toLocaleString('ru')} грн</span>
             </p>
             <Button
               className={s.basketFooterBtn}
@@ -67,4 +74,4 @@ function BasketPage() {
   );
 }
 
-export default BasketPage;
+export default observer(BasketPage);

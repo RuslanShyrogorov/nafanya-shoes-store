@@ -61,12 +61,12 @@
     margin-left: 25px;
   }
 
-  &PriceIcon, &QuantityIcon {
+  &DeleteIcon, &QuantityIcon {
     width: 24px;
     height: 24px;
   }
 
-  &PriceIcon {
+  &DeleteIcon {
     margin-left: 10px;
     color: var(--red);
   }
@@ -93,12 +93,11 @@
       margin-bottom: 10px;
     }
 
-    &PriceIcon {
+    &DeleteBtn {
       position: absolute;
       top: 5px;
       right: 10px;
       margin-left: 0;
-
     }
 
     &Title {
@@ -128,7 +127,7 @@
       }
     }
 
-    &PriceIcon, &QuantityIcon {
+    &DeleteIcon, &QuantityIcon {
       width: 30px;
       height: 30px;
     }

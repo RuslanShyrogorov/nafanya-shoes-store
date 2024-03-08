@@ -1,0 +1,70 @@
+@import '../../styles';
+
+.emptyBasket {
+
+  &Container {
+    @include containerDesktop;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &Wrapper {
+    @include wrapperCardBascet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+
+    & h1 {
+      @include title;
+      font-weight: 600;
+      letter-spacing: 0.32px;
+      margin-bottom: 10px;
+    }
+
+    & p {
+      @include text;
+      color: var(--text-secondary);
+      font-size: 1.29rem;
+      line-height: 1.45;
+      letter-spacing: 0.18px;
+      margin-bottom: 40px;
+    }
+  }
+
+  & img {
+    width: 300px;
+    height: 255px;
+    margin-bottom: 50px;
+  }
+
+  &Link {
+
+  }
+}
+
+@include mobile {
+  .emptyBasket {
+    &Wrapper {
+      text-align: center;
+
+      & h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.2px;
+        margin-bottom: 10px;
+      }
+
+      & p {
+        font-size: 1.2rem;
+        line-height: 1.2;
+      }
+    }
+
+    & img {
+      width: 250px;
+      height: 205px;
+    }
+  }
+
+}
