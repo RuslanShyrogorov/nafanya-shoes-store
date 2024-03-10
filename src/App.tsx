@@ -11,6 +11,7 @@ import BasketPage from './pages/BasketPage/BasketPage';
 import OfferPage from './pages/OfferPage/OfferPage';
 import GuaranteePage from './pages/GuaranteePage/GuaranteePage';
 import DetailedCardPage from './pages/DetailedPage/DetailedCardPage';
+import HowChoosePage from './pages/HowChoosePage/HowChoosePage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='basket' element={<BasketPage />} />
           <Route path='offer' element={<OfferPage />} />
           <Route path='guarantee' element={<GuaranteePage />} />
+          <Route path='how-choose-size' element={<HowChoosePage />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>

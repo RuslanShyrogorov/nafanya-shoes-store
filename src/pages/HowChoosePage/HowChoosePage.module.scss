@@ -1,0 +1,57 @@
+@import '../../styles';
+
+.howChoosePage {
+  @include text;
+  line-height: 1.5;
+
+  &Container {
+    @include containerDesktop;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  & h2 {
+    @include title;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    @include title;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 2rem;
+  }
+
+  &Text {
+    margin-bottom: 1rem;
+  }
+
+  & p {
+    & span {
+      font-weight: 600;
+      font-style: italic;
+    }
+  }
+
+  & li {
+    list-style-type: disc;
+    margin-left: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  & img {
+    margin: 0 auto;
+    width: 625px;
+    height: 150px;
+  }
+
+  &Summary {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+
+}

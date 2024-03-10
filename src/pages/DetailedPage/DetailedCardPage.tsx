@@ -129,7 +129,7 @@ function DetailedCardPage() {
               disabled={selectedSize === ''}
               onClick={handleAddToBasketClick}
             >
-              До кошика
+              {selectedSize ? 'До кошика' : 'Оберіть розмір'}
             </Button>
           </div>
         </div>
