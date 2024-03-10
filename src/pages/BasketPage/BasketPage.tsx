@@ -11,8 +11,11 @@ import EmptyBasket from '../../components/EmptyBasket/EmptyBasket';
 import BasketItem from '../../components/BasketItem/BasketItem';
 
 import s from './BasketPage.module.scss';
+import { useState } from 'react';
+import Modal from '../../components/Modal/Modal';
 
 function BasketPage() {
+  const [isOpenForm, setIsOpenForm] = useState(false);
   const navigate = useNavigate();
   const { clearBasket, sumPrice, items } = basketStore;
   const itemsToJs = toJS(items);
@@ -61,12 +64,17 @@ function BasketPage() {
             <Button
               className={s.basketFooterBtn}
               variant={'outlined'}
-              onClick={() => {
-                console.log('submit');
-              }}
+              onClick={() => setIsOpenForm(true)}
             >
               Оформити замовлення
             </Button>
+            <Modal isOpen={isOpenForm} onClose={() => setIsOpenForm(false)}>
+              <h4>Modal window</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic,
+                incidunt!
+              </p>
+            </Modal>
           </div>
         </div>
       </div>

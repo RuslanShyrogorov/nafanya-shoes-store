@@ -7,13 +7,15 @@ import cn from 'classnames';
 
 import s from './Button.module.scss';
 
+type TVariantButtons = 'icon' | 'text' | 'outlined' | 'contained';
+
 export interface IButtonProps
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
   type?: 'button' | 'submit';
-  variant: string;
+  variant: TVariantButtons;
   disabled?: boolean;
   onClick: (e: MouseEvent) => void;
   className?: string;
