@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import logo from '../../assets/images/logo1.png';
+import logo from 'assets/images/logo1.png';
 
 interface ILogoProps {
   width: string;
@@ -8,7 +8,7 @@ interface ILogoProps {
   className?: string;
 }
 
-function Logo({ className, width = '145', height = '40' }: ILogoProps) {
+export function Logo({ className, width = '145', height = '40' }: ILogoProps) {
   return (
     <Link to='/'>
       <img
@@ -21,5 +21,3 @@ function Logo({ className, width = '145', height = '40' }: ILogoProps) {
     </Link>
   );
 }
-
-export default Logo;

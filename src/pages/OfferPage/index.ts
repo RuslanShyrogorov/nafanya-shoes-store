@@ -1,3 +1,3 @@
-import OfferPage from './OfferPage';
+export { OfferPage as default } from './OfferPage';
 
-export { OfferPage };
+// export { OfferPage };

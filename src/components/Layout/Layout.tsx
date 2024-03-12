@@ -1,15 +1,13 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header from '../Header/Header';
+import { Footer, HeaderObserver } from 'components';
 
 import s from './Layout.module.scss';
-import Footer from '../Footer/Footer';
 
-function Layout() {
+export function Layout() {
   return (
     <div className={s.layout}>
-      <Header />
+      <HeaderObserver />
       <main className={s.main}>
         <Outlet />
       </main>
@@ -17,5 +15,3 @@ function Layout() {
     </div>
   );
 }
-
-export default Layout;

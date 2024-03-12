@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-
 import { FiArrowLeft, FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 
-import OldPrice from '../../components/OldPrice/OldPrice';
-import Button from '../../components/Button/Button';
-import RadioButtons from '../../components/RadioButtons/RadioButtons';
-import Loader from '../../components/Loader/Loader';
-
+import { IShoesOfBasket } from '../../types/types';
 import data from '../../data/shoes.json';
 import { basketStore } from '../../store/basketStore';
-import { IShoesOfBasket } from '../../types/types';
+import { Button, Loader, OldPrice, RadioButtons } from 'components';
 
 import s from './DetailedCardPage.module.scss';
 
@@ -138,4 +133,4 @@ function DetailedCardPage() {
   );
 }
 
-export default observer(DetailedCardPage);
+export const DetailedCardPageObserver = observer(DetailedCardPage);

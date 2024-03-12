@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import cn from 'classnames';
+
 import data from '../../data/shoes.json';
-import Button from '../../components/Button/Button';
-import ItemCard from '../../components/ItemCard/ItemCard';
+import { Button, ItemCard, Loader } from 'components';
 import s from './ShoesPage.module.scss';
-import Loader from '../../components/Loader/Loader';
 
 const buttonList = ['дівчата', 'хлопчики', 'устілки', 'капці', 'розпродаж'];
 
-function ShoesPage() {
+export function ShoesPage() {
   const [products, setProducts] = useState(data.shoes);
   const [activeBtnCategory, setActiveBtnCategory] = useState('all');
 
@@ -63,5 +62,3 @@ function ShoesPage() {
     </section>
   );
 }
-
-export default ShoesPage;

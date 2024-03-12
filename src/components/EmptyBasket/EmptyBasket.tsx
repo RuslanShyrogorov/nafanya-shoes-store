@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
-import basketImg from '../../assets/images/empty-basket.png';
+
+import basketImg from 'assets/images/empty-basket.png';
+
 import s from './EmptyBasket.module.scss';
 
-function EmptyBasket() {
+export function EmptyBasket() {
   return (
     <div className={s.emptyBasket}>
       <div className={s.emptyBasketContainer}>
@@ -23,5 +25,3 @@ function EmptyBasket() {
     </div>
   );
 }
-
-export default EmptyBasket;

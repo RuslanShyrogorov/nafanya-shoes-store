@@ -1,10 +1,11 @@
+import { MouseEventHandler } from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
+
 import { ISizes } from '../../types/types';
+import { OldPrice } from 'components';
 
 import s from './ItemCard.module.scss';
-import { Link } from 'react-router-dom';
-import React, { MouseEventHandler } from 'react';
-import OldPrice from '../OldPrice/OldPrice';
 
 interface itemCardProps {
   id: string;
@@ -19,7 +20,7 @@ interface itemCardProps {
   sizes: ISizes;
 }
 
-function ItemCard({
+export function ItemCard({
   id,
   name,
   picture,
@@ -84,5 +85,3 @@ function ItemCard({
     </div>
   );
 }
-
-export default ItemCard;

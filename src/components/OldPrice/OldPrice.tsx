@@ -1,12 +1,13 @@
-import s from './OldPrice.module.scss';
 import cn from 'classnames';
+
+import s from './OldPrice.module.scss';
 
 interface IOldPriceProps {
   oldPrice?: number;
   className?: string;
 }
 
-function OldPrice({ oldPrice, className }: IOldPriceProps) {
+export function OldPrice({ oldPrice, className }: IOldPriceProps) {
   return (
     <s
       className={cn(
@@ -21,5 +22,3 @@ function OldPrice({ oldPrice, className }: IOldPriceProps) {
     </s>
   );
 }
-
-export default OldPrice;

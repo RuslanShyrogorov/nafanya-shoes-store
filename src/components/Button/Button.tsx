@@ -1,7 +1,8 @@
-import React, {
+import {
   ButtonHTMLAttributes,
   DetailedHTMLProps,
   MouseEvent,
+  ReactElement,
 } from 'react';
 import cn from 'classnames';
 
@@ -19,10 +20,10 @@ export interface IButtonProps
   disabled?: boolean;
   onClick: (e: MouseEvent) => void;
   className?: string;
-  children: React.ReactElement | React.ReactNode;
+  children: ReactElement | React.ReactNode;
 }
 
-function Button({
+export function Button({
   type = 'button',
   variant,
   onClick,
@@ -53,5 +54,3 @@ function Button({
     </button>
   );
 }
-
-export default Button;

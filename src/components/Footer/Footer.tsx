@@ -3,7 +3,7 @@ import { FaInstagram } from 'react-icons/fa6';
 
 import s from './Footer.module.scss';
 
-function Footer() {
+export function Footer() {
   return (
     <footer className={s.footer}>
       <div className={s.footerContainer}>
@@ -82,5 +82,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

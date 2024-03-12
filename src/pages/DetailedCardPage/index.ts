@@ -1,3 +1,3 @@
-import DetailedCardPage from './DetailedCardPage';
+export { DetailedCardPageObserver as default } from './DetailedCardPage';
 
-export { DetailedCardPage };
+// export { DetailedCardPage };

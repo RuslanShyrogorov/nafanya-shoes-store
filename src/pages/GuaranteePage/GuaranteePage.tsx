@@ -1,6 +1,6 @@
 import s from './GuaranteePage.module.scss';
 
-function GuaranteePage() {
+export function GuaranteePage() {
   return (
     <section className={s.guarantee}>
       <div className={s.guaranteeContainer}>
@@ -51,5 +51,3 @@ function GuaranteePage() {
     </section>
   );
 }
-
-export default GuaranteePage;

@@ -8,7 +8,7 @@ interface IRadioButtonsProps {
   className?: string;
 }
 
-function RadioButtons({
+export function RadioButtons({
   sizes,
   selected,
   setSelected,
@@ -35,5 +35,3 @@ function RadioButtons({
     </div>
   );
 }
-
-export default RadioButtons;

@@ -1,10 +1,11 @@
-import s from './BasketItem.module.scss';
-import { IShoesOfBasket } from '../../types/types';
 import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import Button from '../Button/Button';
+
+import { Button } from 'components';
+import { IShoesOfBasket } from '../../types/types';
 import { basketStore } from '../../store/basketStore';
-import { observer } from 'mobx-react-lite';
+
+import s from './BasketItem.module.scss';
 
 function BasketItem({
   article,
@@ -16,7 +17,6 @@ function BasketItem({
   extraId,
 }: IShoesOfBasket) {
   const { removeItem, increaseQtyItem, decreaseQtyItem } = basketStore;
-  console.log(selectedQuantity);
 
   const handleRemoveItem = (extraId: string) => {
     removeItem(extraId);
@@ -68,4 +68,4 @@ function BasketItem({
   );
 }
 
-export default observer(BasketItem);
+export const BasketItemObserver = BasketItem;

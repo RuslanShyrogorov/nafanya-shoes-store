@@ -1,18 +1,14 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { observer } from 'mobx-react-lite';
 import { toJS } from 'mobx';
-
+import { observer } from 'mobx-react-lite';
 import { BsCart, BsTrash3 } from 'react-icons/bs';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import { basketStore } from '../../store/basketStore';
-import Button from '../../components/Button/Button';
-import EmptyBasket from '../../components/EmptyBasket/EmptyBasket';
-import BasketItem from '../../components/BasketItem/BasketItem';
+import { BasketItemObserver, Button, EmptyBasket, Modal } from 'components';
 
 import s from './BasketPage.module.scss';
-import { useState } from 'react';
-import { Modal } from '../../components';
 
 function BasketPage() {
   const [isOpenForm, setIsOpenForm] = useState(false);
@@ -51,7 +47,7 @@ function BasketPage() {
           <ul className={s.basketList}>
             {itemsToJs.map((item) => (
               <li key={item.extraId}>
-                <BasketItem {...item} />
+                <BasketItemObserver {...item} />
               </li>
             ))}
             {/*<EmptyBasket />*/}
@@ -82,4 +78,4 @@ function BasketPage() {
   );
 }
 
-export default observer(BasketPage);
+export const BasketPageObserver = observer(BasketPage);

@@ -1,3 +1,1 @@
-import PaymentPage from './PaymentPage';
-
-export { PaymentPage };
+export { PaymentPage as default } from './PaymentPage';

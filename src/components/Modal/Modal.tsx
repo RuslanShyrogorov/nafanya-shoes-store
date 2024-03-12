@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import ReactDom from 'react-dom';
-import Button from '../Button/Button';
 import { FaTimes } from 'react-icons/fa';
+
+import { Button } from 'components';
+
 import s from './Modal.module.scss';
 
 const modalRoot = document.getElementById('modal-root');
 
 interface IModalProps {
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   isOpen: boolean;
   onClose: () => void;
 }

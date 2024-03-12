@@ -1,6 +1,6 @@
 import s from './PaymentPage.module.scss';
 
-function PaymentPage() {
+export function PaymentPage() {
   return (
     <div className={s.payment}>
       <div className={s.paymentContainer}>
@@ -64,5 +64,3 @@ function PaymentPage() {
     </div>
   );
 }
-
-export default PaymentPage;

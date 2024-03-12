@@ -3,8 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { BsCart } from 'react-icons/bs';
 
 import { basketStore } from '../../store/basketStore';
-import Logo from '../Logo/Logo';
-import Navbar from '../Navbar/Navbar';
+import { Logo, Navbar } from 'components';
 
 import s from './Header.module.scss';
 
@@ -39,4 +38,4 @@ function Header() {
   );
 }
 
-export default observer(Header);
+export const HeaderObserver = observer(Header);

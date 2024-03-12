@@ -1,3 +1,3 @@
-import ShoesPage from './ShoesPage';
+export { ShoesPage as default } from './ShoesPage';
 
-export { ShoesPage };
+// export { ShoesPage };

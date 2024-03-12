@@ -1,8 +1,9 @@
-import checkSize1 from '../../assets/images/check-size1.jpg';
-import checkSize2 from '../../assets/images/check-size2.jpg';
+import checkSize1 from 'assets/images/check-size1.jpg';
+import checkSize2 from 'assets/images/check-size2.jpg';
+
 import s from './HowChoosePage.module.scss';
 
-function HowChoosePage() {
+export function HowChoosePage() {
   return (
     <div className={s.howChoosePage}>
       <div className={s.howChoosePageContainer}>
@@ -154,5 +155,3 @@ function HowChoosePage() {
     </div>
   );
 }
-
-export default HowChoosePage;
