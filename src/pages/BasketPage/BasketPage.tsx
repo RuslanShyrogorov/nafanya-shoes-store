@@ -12,7 +12,7 @@ import BasketItem from '../../components/BasketItem/BasketItem';
 
 import s from './BasketPage.module.scss';
 import { useState } from 'react';
-import Modal from '../../components/Modal/Modal';
+import { Modal } from '../../components';
 
 function BasketPage() {
   const [isOpenForm, setIsOpenForm] = useState(false);

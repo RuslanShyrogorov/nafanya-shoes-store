@@ -3,7 +3,7 @@ import { ISizes } from '../../types/types';
 
 import s from './ItemCard.module.scss';
 import { Link } from 'react-router-dom';
-import { MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import OldPrice from '../OldPrice/OldPrice';
 
 interface itemCardProps {

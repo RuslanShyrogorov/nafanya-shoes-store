@@ -3,15 +3,17 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import './styles/index.scss';
 import Layout from './components/Layout/Layout';
-import HomePage from './pages/HomePage/HomePage';
-import ShoesPage from './pages/ShoesPage/ShoesPage';
-import PaymentPage from './pages/PaymentPage/PaymentPage';
-import AboutPage from './pages/AboutPage/AboutPage';
-import BasketPage from './pages/BasketPage/BasketPage';
-import OfferPage from './pages/OfferPage/OfferPage';
-import GuaranteePage from './pages/GuaranteePage/GuaranteePage';
-import DetailedCardPage from './pages/DetailedPage/DetailedCardPage';
-import HowChoosePage from './pages/HowChoosePage/HowChoosePage';
+import {
+  AboutPage,
+  BasketPage,
+  DetailedCardPage,
+  GuaranteePage,
+  HomePage,
+  HowChoosePage,
+  OfferPage,
+  PaymentPage,
+  ShoesPage,
+} from './pages';
 
 function App() {
   return (

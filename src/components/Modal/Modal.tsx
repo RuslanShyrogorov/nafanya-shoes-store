@@ -13,7 +13,7 @@ interface IModalProps {
   onClose: () => void;
 }
 
-function Modal({ children, isOpen, onClose }: IModalProps) {
+export function Modal({ children, isOpen, onClose }: IModalProps) {
   const onPressEscape = (e: KeyboardEvent) => {
     if (e.code === 'Escape') {
       onClose();
@@ -54,5 +54,3 @@ function Modal({ children, isOpen, onClose }: IModalProps) {
       )
     : null;
 }
-
-export default Modal;
