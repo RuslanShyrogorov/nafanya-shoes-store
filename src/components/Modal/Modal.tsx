@@ -1,6 +1,6 @@
-import { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import ReactDom from 'react-dom';
-import { FaTimes } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io';
 
 import { Button } from 'components';
 
@@ -45,7 +45,7 @@ export function Modal({ children, isOpen, onClose }: IModalProps) {
                   variant='icon'
                   onClick={onClose}
                 >
-                  <FaTimes className={s.modalCloseBtnIcon} />
+                  <IoMdClose className={s.modalCloseBtnIcon} />
                 </Button>
                 {children}
               </div>

@@ -6,7 +6,13 @@ import { BsCart, BsTrash3 } from 'react-icons/bs';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import { basketStore } from '../../store/basketStore';
-import { BasketItemObserver, Button, EmptyBasket, Modal } from 'components';
+import {
+  BasketItemObserver,
+  Button,
+  EmptyBasket,
+  Form,
+  Modal,
+} from 'components';
 
 import s from './BasketPage.module.scss';
 
@@ -65,11 +71,7 @@ function BasketPage() {
               Оформити замовлення
             </Button>
             <Modal isOpen={isOpenForm} onClose={() => setIsOpenForm(false)}>
-              <h4>Modal window</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic,
-                incidunt!
-              </p>
+              <Form onClose={() => setIsOpenForm(false)} />
             </Modal>
           </div>
         </div>

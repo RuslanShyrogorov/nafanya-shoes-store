@@ -18,7 +18,7 @@ export interface IButtonProps
   type?: 'button' | 'submit';
   variant: TVariantButtons;
   disabled?: boolean;
-  onClick: (e: MouseEvent) => void;
+  onClick?: (e: MouseEvent) => void;
   className?: string;
   children: ReactElement | React.ReactNode;
 }

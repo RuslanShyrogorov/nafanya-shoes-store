@@ -24,13 +24,12 @@
 
   &Content {
     position: relative;
-    margin: 20px;
     //width: 100%;
-    //max-width: 600px;
+    max-width: 100%;
     border-radius: 15px;
     background-color: #fff;
     padding: 40px 20px 20px 20px;
-    transform: translateY(-50%);
+    //transform: translateY(-50%);
     transition: transform var(--time-animation) var(--animation);
   }
 
@@ -47,4 +46,18 @@
     }
   }
 
+}
+
+@include mobile {
+  .modal {
+
+    &Wrapper {
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    &Content {
+      margin-top: 20px;
+    }
+  }
 }

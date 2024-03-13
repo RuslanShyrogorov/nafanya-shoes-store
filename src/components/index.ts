@@ -11,6 +11,7 @@ import Logo from './Logo';
 import Navbar from './Navbar';
 import OldPrice from './OldPrice';
 import RadioButtons from './RadioButtons';
+import Form from './Form';
 
 export {
   Modal,
@@ -26,4 +27,5 @@ export {
   Navbar,
   OldPrice,
   RadioButtons,
+  Form,
 };
