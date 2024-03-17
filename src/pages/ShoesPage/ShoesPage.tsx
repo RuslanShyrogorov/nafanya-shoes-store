@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
-import { Button, ItemCard, Loader, Pagination } from 'components';
+import { Button, ItemCard, Pagination } from 'components';
 import { filterByCategory, getShoes } from 'utils';
 import { shoes } from '../../data/shoes';
 import { IShoe } from '../../types/types';
@@ -12,21 +12,25 @@ export function ShoesPage() {
   const [products, setProducts] = useState<IShoe[]>([]);
   const [activeBtnCategory, setActiveBtnCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(3);
+  const [productsPerPage] = useState(6);
 
   useEffect(() => {
     const result = getShoes(shoes);
-    setProducts(result);
-  }, []);
+    const visibleShoes = filterByCategory(activeBtnCategory, result);
+    if (visibleShoes) {
+      setProducts(visibleShoes);
+      setCurrentPage(1);
+    }
+  }, [activeBtnCategory]);
 
-  const visibleShoes = filterByCategory(activeBtnCategory, products);
-  if (!visibleShoes) {
-    return <Loader />;
-  }
-  const totalProducts = visibleShoes.length;
+  useEffect(() => {
+    window.scrollTo({ top: 100, behavior: 'smooth' });
+  }, [currentPage]);
+
+  const totalProducts = products.length;
   const lastProductsIndex = currentPage * productsPerPage;
   const firstProductsIndex = lastProductsIndex - productsPerPage;
-  const currentProductsOnPage = visibleShoes.slice(
+  const currentProductsOnPage = products.slice(
     firstProductsIndex,
     lastProductsIndex
   );
