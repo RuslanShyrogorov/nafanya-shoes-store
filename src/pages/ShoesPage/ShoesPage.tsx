@@ -1,36 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
-
-import data from '../../data/shoes.json';
-import { Button, ItemCard, Loader } from 'components';
+import { Button, ItemCard, Loader, Pagination } from 'components';
+import { filterByCategory, getShoes } from 'utils';
+import { shoes } from '../../data/shoes';
+import { IShoe } from '../../types/types';
 import s from './ShoesPage.module.scss';
 
 const buttonList = ['дівчата', 'хлопчики', 'устілки', 'капці', 'розпродаж'];
 
 export function ShoesPage() {
-  const [products, setProducts] = useState(data.shoes);
+  const [products, setProducts] = useState<IShoe[]>([]);
   const [activeBtnCategory, setActiveBtnCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(3);
 
-  const filterByCategory = (category: string) => {
-    if (category === 'all') {
-      return products;
-    } else if (category === 'дівчата') {
-      return products.filter((item) => item.gender.includes('girl'));
-    } else if (category === 'хлопчики') {
-      return products.filter((item) => item.gender.includes('boy'));
-    } else if (category === 'розпродаж') {
-      return products.filter((item) => item.oldPrice > 0);
-    } else if (category === 'устілки') {
-      return products.filter((item) => item.type === 'insoles');
-    } else if (category === 'капці') {
-      return products.filter((item) => item.type === 'slippers');
-    }
-  };
+  useEffect(() => {
+    const result = getShoes(shoes);
+    setProducts(result);
+  }, []);
 
-  const visibleShoes = filterByCategory(activeBtnCategory);
+  const visibleShoes = filterByCategory(activeBtnCategory, products);
   if (!visibleShoes) {
     return <Loader />;
   }
+  const totalProducts = visibleShoes.length;
+  const lastProductsIndex = currentPage * productsPerPage;
+  const firstProductsIndex = lastProductsIndex - productsPerPage;
+  const currentProductsOnPage = visibleShoes.slice(
+    firstProductsIndex,
+    lastProductsIndex
+  );
 
   return (
     <section className={s.shoes}>
@@ -52,12 +51,17 @@ export function ShoesPage() {
           ))}
         </ul>
         <ul className={s.shoesCardList}>
-          {visibleShoes.map((item) => (
+          {currentProductsOnPage.map((item) => (
             <li key={item.id}>
               <ItemCard {...item} />
             </li>
           ))}
         </ul>
+        <Pagination
+          totalProducts={totalProducts}
+          productsPerPage={productsPerPage}
+          handleClick={setCurrentPage}
+        />
       </div>
     </section>
   );

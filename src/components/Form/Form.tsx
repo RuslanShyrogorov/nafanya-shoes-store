@@ -36,7 +36,7 @@ const schema = yup
     phoneNumber: yup
       .string()
       .trim()
-      .matches(/^\+?3?8 ?\(?\d{3}\)? ?\d{3} ?\d{2} ?\d{2}$/, '8 0xx xxx xx xx')
+      .matches(/^\+?3?8 ?\(?\d{3}\)? ?\d{3} ?\d{2} ?\d{2}$/, '8 0XX XXX XX XX')
       .required("Обовя'зкове поле"),
     content: yup.string().trim().max(250),
   })
@@ -45,7 +45,6 @@ const schema = yup
 export function Form({ onClose }: IFormProps) {
   const { items } = basketStore;
   const {
-    watch,
     register,
     handleSubmit,
     formState: { errors },
@@ -114,7 +113,7 @@ export function Form({ onClose }: IFormProps) {
               })}
               type='tel'
               {...register('phoneNumber')}
-              placeholder='+38 0xx xxx xx xx'
+              placeholder='+38 0XX XXX XX XX'
             />
             {errors?.lastName && (
               <p className={s.formErrorText}>{errors.phoneNumber?.message}</p>

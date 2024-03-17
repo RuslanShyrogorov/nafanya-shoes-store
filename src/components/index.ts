@@ -12,6 +12,7 @@ import Navbar from './Navbar';
 import OldPrice from './OldPrice';
 import RadioButtons from './RadioButtons';
 import Form from './Form';
+import Pagination from 'components/Pagination';
 
 export {
   Modal,
@@ -28,4 +29,5 @@ export {
   OldPrice,
   RadioButtons,
   Form,
+  Pagination,
 };
