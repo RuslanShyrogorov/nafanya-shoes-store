@@ -1,0 +1,81 @@
+@import '../../styles';
+
+.pagination {
+  @include text;
+  max-width: 70%;
+  margin: 40px auto 0 auto;
+
+  &List {
+    display: flex;
+    //flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    @include text;
+    font-size: 0.875rem;
+    max-width: 80%;
+    margin: 40px auto 0 auto;
+  }
+
+  &ItemLink {
+    color: var(--bgc-brown);
+    border: 1px solid var(--bgc-brown);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: box-shadow var(--time-animation) var(--animation);
+
+    &:hover {
+      box-shadow: var(--shadow-btn);
+    }
+
+    &Active {
+      background-color: var(--bgc-btn);
+      border: 1px solid var(--bgc-btn);
+      color: white;
+    }
+  }
+
+  &Arrow {
+    width: 20px;
+    height: 20px;
+
+  }
+
+  &DotsLink {
+    color: var(--bgc-brown);
+    cursor: pointer;
+  }
+
+  &Prev, &Next {
+    align-self: flex-end;
+  }
+
+  &PrevLink, &NextLink {
+    color: var(--bgc-brown);
+    cursor: pointer;
+  }
+
+  &PrevLink {
+    transition: transform var(--time-animation) var(--animation);
+
+    &:hover {
+      transform: translateX(-3px);
+    }
+  }
+
+  &NextLink {
+    transition: transform var(--time-animation) var(--animation);
+
+    &:hover {
+      transform: translateX(3px);
+    }
+  }
+
+}
+
+//align-self: flex-end;

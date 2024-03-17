@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 import { BsCart } from 'react-icons/bs';
 
-import Logo from '../Logo/Logo';
-import Navbar from '../Navbar/Navbar';
+import { basketStore } from '../../store/basketStore';
+import { Logo, Navbar } from 'components';
 
 import s from './Header.module.scss';
 
 function Header() {
+  const { totalItems } = basketStore;
   return (
     <header className={s.header}>
       <div className={s.headerContainer}>
         <Logo className={s.headerLogo} width='145' height='40' />
         <address>
-          <ul>
+          <ul className={s.headerPhones}>
             <li>
               <a href='tel:+380965386648'>+38 (096) 538‑66-48</a>
             </li>
@@ -27,7 +29,7 @@ function Header() {
           <Link to='basket'>
             <BsCart className={s.basketImg} />
             <div className={s.basketLabel}>
-              <span>0</span>
+              <span>{totalItems}</span>
             </div>
           </Link>
         </div>
@@ -36,4 +38,4 @@ function Header() {
   );
 }
 
-export default Header;
+export const HeaderObserver = observer(Header);

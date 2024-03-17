@@ -20,27 +20,36 @@
   line-height: 1.2;
 }
 
+@mixin wrapperCardBascet {
+  margin: 0 auto;
+  padding: 15px 15px;
+  max-width: 80%;
+  box-shadow: var(--shadow-detailed-card);
+  border-radius: 5px;
+  position: relative;
+}
+
 
 @mixin containerDesktop {
-  max-width: 1180px;
+  max-width: 1230px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 @mixin containerLarge {
-  width: 994px;
+  max-width: 994px;
   padding: 0 15px;
-  margin: 0 auto;
+  //margin: 0 auto;
 }
 
 @mixin containerTablet {
-  width: 768px;
+  max-width: 768px;
   padding: 0 10px;
-  margin: 0 auto;
+  //margin: 0 auto;
 }
 
 @mixin containerMobile {
-  width: 320px;
+  max-width: 320px;
   padding: 0 5px;
   margin: 0 auto;
 }

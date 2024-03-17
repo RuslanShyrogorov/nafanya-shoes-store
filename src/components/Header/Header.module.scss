@@ -1,11 +1,7 @@
 @import '../../styles';
 
 .header {
-  //position: fixed;
   width: 100%;
-  //top: 0;
-  //left: 0;
-  //z-index: 5;
   border-bottom: 1px solid var(--text-gray);
   background-color: var(--bgc-main);
 
@@ -43,23 +39,21 @@
   order: 3;
 
   &Img {
-    //width: 24px; //mobile
     width: 30px;
-    //height: 24px; //mobile
     height: 30px;
   }
 
   &Label {
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: -5px;
+    right: -5px;
     font-size: 0.8rem;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background-color: red;
     border-radius: 50%;
   }
@@ -110,14 +104,28 @@
 
 // Mobile
 @include mobile {
-  .container {
-    @include containerMobile;
-  }
 
   .header {
+    &Container {
+      @include containerMobile;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 15px 5px 10px 5px;
+    }
+
+    & address {
+      order: 4;
+      margin: 10px auto 0 auto;
+    }
+
     &Logo {
       width: 145px;
       height: 40px;
+    }
+
+    &Phones {
+      display: flex;
+      gap: 20px;
     }
   }
 

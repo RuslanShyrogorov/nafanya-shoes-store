@@ -1,6 +1,6 @@
 import s from './HomePage.module.scss';
 
-function HomePage() {
+export function HomePage() {
   return (
     <section className={s.home}>
       <div className={s.homeContainer}>
@@ -12,5 +12,3 @@ function HomePage() {
     </section>
   );
 }
-
-export default HomePage;

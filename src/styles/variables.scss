@@ -1,9 +1,15 @@
 :root {
   --bgc-main: #FAF7F1;
   --bgc-btn: #D7B399;
-  //--bgc-btn2: #b49478;
   --bgc-brown: #9d825d;
   --red: #FF3451;
+  --devider: #F6F6F6;
+  --bgc-input: #ecf1f7;
+  --bgc-input-hover: #e4ebf3;
+  --color-red: #e31235;
+  --color-red-light: #fbe4e3;
+  --color-red-light-hover: #fadbda;
+
 
   --text-primary: #3E3E3E;
   --text-secondary: #747474;
@@ -16,6 +22,7 @@
 
   --shadow-card: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
+  --shadow-detailed-card: 0 2px 7px rgba(0, 0, 0, .23);
   --shadow-btn: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
   0px 2px 2px rgba(0, 0, 0, 0.12);
 

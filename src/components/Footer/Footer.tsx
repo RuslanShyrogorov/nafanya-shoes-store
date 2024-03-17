@@ -3,7 +3,7 @@ import { FaInstagram } from 'react-icons/fa6';
 
 import s from './Footer.module.scss';
 
-function Footer() {
+export function Footer() {
   return (
     <footer className={s.footer}>
       <div className={s.footerContainer}>
@@ -50,7 +50,7 @@ function Footer() {
                 <Link to='offer'>Договір оферти</Link>
               </li>
               <li>
-                <Link to='sizes'>Як обрати розмір</Link>
+                <Link to='how-choose-size'>Як обрати розмір</Link>
               </li>
               <li>
                 <Link to='guarantee'>Гарантія</Link>
@@ -82,5 +82,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

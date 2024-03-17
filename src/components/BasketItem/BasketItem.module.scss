@@ -1,0 +1,141 @@
+@import '../../styles';
+
+.basketItem {
+  font-size: 1.2rem;
+
+  &Wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--bgc-main);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: var(--shadow-detailed-card);
+  }
+
+  &Article {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  &Img {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &Title {
+    margin-left: 25px;
+    flex: 0 1 350px;
+  }
+
+  &Size {
+    font-size: 1rem;
+    flex: 0 0 85px;
+    margin-left: 15px;
+
+    & span {
+      font-weight: 600;
+    }
+  }
+
+  &Quantity {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 0 0 90px;
+    margin-left: 25px;
+  }
+
+  &Price {
+    @include subtitle;
+    flex: 1 0 90px;
+    margin-left: 25px;
+  }
+
+  &DeleteIcon, &QuantityIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &DeleteIcon {
+    margin-left: 10px;
+    color: var(--red);
+  }
+}
+
+@include mobile {
+  .basketItem {
+    font-size: 1rem;
+
+    &Wrapper {
+      flex-direction: column;
+    }
+
+    &Article {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    &Img {
+      width: 290px;
+      height: 290px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    &DeleteBtn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      margin-left: 0;
+    }
+
+    &Title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-left: 0;
+      margin-bottom: 15px;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    &Size {
+      font-size: 1.1rem;
+      flex: 1 1 auto;
+      margin-left: 0;
+      margin-bottom: 15px;
+    }
+
+    &Quantity {
+      flex: 1 1 auto;
+      margin-left: 0;
+      margin-bottom: 15px;
+
+      & p {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+    }
+
+    &DeleteIcon, &QuantityIcon {
+      width: 30px;
+      height: 30px;
+    }
+
+    &Price {
+      font-size: 1.4rem;
+      flex: 1 1 auto;
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../styles';
+
+.radioButtons {
+  //font-size: 1rem;
+
+  &Item {
+    margin-top: 5px;
+  }
+
+  & label {
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    & input {
+      accent-color: var(--bgc-brown);
+      margin: 0;
+    }
+
+    & span {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-right: 0;
+    }
+  }
+
+
+}

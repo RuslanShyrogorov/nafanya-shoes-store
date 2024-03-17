@@ -1,3 +1,186 @@
-.basketPage{
+@import "../../styles";
 
+.basket {
+  color: var(--bgc-brown);
+
+  &BtnBack {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 100px;
+  }
+
+  &Container {
+    @include containerDesktop;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &Wrapper {
+    @include wrapperCardBascet;
+    //margin: 0 auto;
+    //padding: 15px 15px;
+    //max-width: 80%;
+    //box-shadow: var(--shadow-detailed-card);
+    //border-radius: 5px;
+    //position: relative;
+  }
+
+  &Header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 15px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: var(--devider);
+      top: 60px;
+      left: 0;
+    }
+
+    &IconCart {
+      width: 30px;
+      height: 30px;
+      font-weight: 600;
+    }
+
+    &IconTrash {
+      width: 20px;
+      height: 20px;
+    }
+
+    &Title {
+      @include subtitle;
+      font-size: 2rem;
+      margin-left: 17px;
+    }
+
+    &Btn {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  &Footer {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    & p > span {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    &Btn {
+      font-weight: 500;
+      font-size: 1rem;
+      min-width: 200px;
+      padding: 10px 20px;
+    }
+  }
+}
+
+@include large {
+  .basket {
+
+    &Container {
+      @include containerLarge;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+}
+
+@include tablet {
+  .basket {
+    &BtnBack {
+      margin-left: 10px;
+    }
+
+    &Container {
+      @include containerTablet;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &Wrapper {
+      max-width: 100%;
+    }
+
+    &Header {
+      &IconCart {
+        width: 25px;
+        height: 25px;
+      }
+
+      &Title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .basket {
+    &BtnBack {
+      margin-left: 5px;
+    }
+
+    &Container {
+      @include containerMobile;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    &Wrapper {
+      padding: 10px 5px;
+      max-width: 100%;
+    }
+
+    &Header {
+
+      &Title {
+        display: none;
+      }
+
+      & span {
+        display: none;
+      }
+    }
+
+
+    &Footer {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 1.2rem;
+
+      & p > span {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      &Btn {
+        font-weight: 500;
+        font-size: 1.1rem;
+        min-width: 200px;
+        padding: 8px 20px;
+      }
+    }
+  }
 }

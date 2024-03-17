@@ -1,22 +1,35 @@
-import React from 'react';
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  MouseEvent,
+  ReactElement,
+} from 'react';
 import cn from 'classnames';
 
 import s from './Button.module.scss';
 
-interface IButtonProps {
+type TVariantButtons = 'icon' | 'text' | 'outlined' | 'contained';
+
+export interface IButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   type?: 'button' | 'submit';
-  variant: string;
-  onClick: () => void;
+  variant: TVariantButtons;
+  disabled?: boolean;
+  onClick?: (e: MouseEvent) => void;
   className?: string;
-  children: React.ReactElement | React.ReactNode;
+  children: ReactElement | React.ReactNode;
 }
 
-function Button({
+export function Button({
   type = 'button',
   variant,
   onClick,
   className,
   children,
+  disabled,
   ...props
 }: IButtonProps) {
   return (
@@ -28,13 +41,16 @@ function Button({
         { [s.buttonIcon]: variant === 'icon' },
         { [s.buttonText]: variant === 'text' },
         { [s.buttonOutlined]: variant === 'outlined' },
+        {
+          [s.buttonContained]: variant === 'contained',
+          [s.buttonContainedDisabled]: disabled,
+        },
         className
       )}
+      disabled={disabled}
       {...props}
     >
       {children}
     </button>
   );
 }
-
-export default Button;

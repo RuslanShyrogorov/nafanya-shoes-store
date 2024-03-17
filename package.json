@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://RuslanShyrogorov.github.io/nafanya-shoes-store",
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,17 +14,22 @@
     "@types/react-dom": "^18.2.18",
     "axios": "^1.6.7",
     "classnames": "^2.3.2",
+    "mobx": "^6.12.0",
+    "mobx-react-lite": "^4.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
     "react-icons": "^5.0.1",
-    "react-loader-spinner": "^6.1.1-0",
+    "react-loader-spinner": "^6.1.6",
+    "react-paginate": "^8.2.0",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
     "sass": "^1.69.5",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "yup": "^1.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

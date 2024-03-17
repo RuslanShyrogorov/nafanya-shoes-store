@@ -1,6 +1,5 @@
 import s from './OfferPage.module.scss';
 
-// TODO after need check and replace text with URL
 import data from '../../data/offer.json';
 
 type TOffer = {
@@ -9,7 +8,7 @@ type TOffer = {
   description: string[];
 };
 
-function OfferPage() {
+export function OfferPage() {
   const text = data.offer;
 
   return (
@@ -35,5 +34,3 @@ function OfferPage() {
     </section>
   );
 }
-
-export default OfferPage;

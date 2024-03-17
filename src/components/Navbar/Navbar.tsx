@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import cn from 'classnames';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-import Button from '../Button/Button';
+import { Button } from 'components';
 
 import s from './Navbar.module.scss';
 
@@ -11,14 +11,13 @@ const menuList = [
   { id: '1', title: 'Головна', path: '/' },
   { id: '2', title: 'Взуття', path: '/shoes' },
   { id: '3', title: 'Оплата та доставка', path: 'payment' },
-  // { id: '4', title: 'Про нас', path: '/about' },
 ];
 
 interface INavbarProps {
   className?: string;
 }
 
-function Navbar({ className }: INavbarProps) {
+export function Navbar({ className }: INavbarProps) {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   const handleClickMobileMenu = () => {
@@ -74,5 +73,3 @@ function Navbar({ className }: INavbarProps) {
     </>
   );
 }
-
-export default Navbar;
