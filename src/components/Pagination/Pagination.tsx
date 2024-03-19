@@ -40,7 +40,6 @@ export function Pagination({
       nextLinkClassName={s.paginationNextLink}
       breakLinkClassName={s.paginationDotsLink}
       activeLinkClassName={s.paginationItemLinkActive}
-      //=======
       onPageChange={handleClickPage}
       renderOnZeroPageCount={null}
     />

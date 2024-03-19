@@ -1,13 +1,13 @@
+import React, { useRef } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toJS } from 'mobx';
 import cn from 'classnames';
-
 import { Button } from 'components/index';
 import { basketStore } from '../../store/basketStore';
 
 import s from './Form.module.scss';
+import { schemaForm } from 'utils';
 
 interface IForm {
   firstName: string;
@@ -20,29 +20,8 @@ interface IFormProps {
   onClose?: () => void;
 }
 
-const schema = yup
-  .object()
-  .shape({
-    firstName: yup
-      .string()
-      .trim()
-      .matches(/^([^0-9]*)$/, 'Тільки букви!')
-      .required("Обовя'зкове поле"),
-    lastName: yup
-      .string()
-      .trim()
-      .matches(/^([^0-9]*)$/, 'Тільки букви!')
-      .required("Обовя'зкове поле"),
-    phoneNumber: yup
-      .string()
-      .trim()
-      .matches(/^\+?3?8 ?\(?\d{3}\)? ?\d{3} ?\d{2} ?\d{2}$/, '8 0XX XXX XX XX')
-      .required("Обовя'зкове поле"),
-    content: yup.string().trim().max(250),
-  })
-  .required();
-
 export function Form({ onClose }: IFormProps) {
+  const form = useRef<HTMLFormElement | null>(null);
   const { items } = basketStore;
   const {
     register,
@@ -51,7 +30,7 @@ export function Form({ onClose }: IFormProps) {
     reset,
   } = useForm<IForm>({
     mode: 'onChange',
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schemaForm),
   });
 
   const onSubmit: SubmitHandler<IForm> = (data) => {
@@ -59,15 +38,49 @@ export function Form({ onClose }: IFormProps) {
 
     const toMail = { ...data, ...ItemInBasket };
     console.log(toMail);
+    //==============================
+    // const sendEmail = () => {
+    //   emailjs
+    //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', toMail, {
+    //       publicKey: 'YOUR_PUBLIC_KEY',
+    //     })
+    //     .then(
+    //       () => {
+    //         console.log('SUCCESS!');
+    //       },
+    //       (error) => {
+    //         console.log('FAILED...', error.text);
+    //       }
+    //     );
+    // };
+
+    // =============================
     if (onClose) {
       onClose();
     }
     reset();
   };
 
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //
+  //   emailjs
+  //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
+  //       publicKey: 'YOUR_PUBLIC_KEY',
+  //     })
+  //     .then(
+  //       () => {
+  //         console.log('SUCCESS!');
+  //       },
+  //       (error) => {
+  //         console.log('FAILED...', error.text);
+  //       }
+  //     );
+  // };
+
   return (
     <>
-      <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+      <form ref={form} className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={s.formTitle}>Оформіть замовлення</h2>
         <div className={s.formContent}>
           <label className={cn(s.formItem)}>
