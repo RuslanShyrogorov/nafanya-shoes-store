@@ -1,13 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toJS } from 'mobx';
 import cn from 'classnames';
-import { Button } from 'components/index';
+import emailjs from '@emailjs/browser';
+
 import { basketStore } from '../../store/basketStore';
+import { Button, Loader } from 'components/index';
+import { schemaForm } from 'utils';
 
 import s from './Form.module.scss';
-import { schemaForm } from 'utils';
 
 interface IForm {
   firstName: string;
@@ -20,67 +22,74 @@ interface IFormProps {
   onClose?: () => void;
 }
 
+const YOUR_SERVICE_ID = 'service_7c0ztj8';
+const YOUR_TEMPLATE_ID = 'template_47jpln8';
+const YOUR_PUBLIC_KEY = 'mm6obt2InRo6BZElU';
+
 export function Form({ onClose }: IFormProps) {
-  const form = useRef<HTMLFormElement | null>(null);
+  const [loading, setLoading] = useState(false);
   const { items } = basketStore;
+
+  useEffect(() => emailjs.init(YOUR_PUBLIC_KEY), []);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    getValues,
   } = useForm<IForm>({
     mode: 'onChange',
     resolver: yupResolver(schemaForm),
   });
 
-  const onSubmit: SubmitHandler<IForm> = (data) => {
-    const ItemInBasket = toJS(items);
+  const onSubmit: SubmitHandler<IForm> = async () => {
+    const itemInBasket = toJS(items);
+    const emailData = {
+      firstName: getValues('firstName'),
+      lastName: getValues('lastName'),
+      phoneNumber: getValues('phoneNumber'),
+      content: getValues('content'),
+      ...itemInBasket,
+    };
+    // console.log('emailData', JSON.stringify(emailData));
 
-    const toMail = { ...data, ...ItemInBasket };
-    console.log(toMail);
-    //==============================
-    // const sendEmail = () => {
-    //   emailjs
-    //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', toMail, {
-    //       publicKey: 'YOUR_PUBLIC_KEY',
-    //     })
-    //     .then(
-    //       () => {
-    //         console.log('SUCCESS!');
-    //       },
-    //       (error) => {
-    //         console.log('FAILED...', error.text);
-    //       }
-    //     );
-    // };
+    try {
+      setLoading(true);
 
-    // =============================
-    if (onClose) {
-      onClose();
+      const response = await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, {
+        firstName: getValues('firstName'),
+        lastName: getValues('lastName'),
+        phoneNumber: getValues('phoneNumber'),
+        // table:
+        // table: tableContent,
+        // article: itemInBasket[0].article,
+        // name: itemInBasket[0].name,
+        // size: itemInBasket[0].selectedSize,
+        // price: itemInBasket[0].price,
+        // quantity: itemInBasket[0].selectedQuantity,
+        // totalPrice: itemInBasket[0].orderPrice,
+      });
+
+      console.log('response', response.status);
+      console.log('response', response);
+
+      alert('email successfully sent check inbox');
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
+
+    if (!onClose) return;
+    onClose();
     reset();
   };
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //
-  //   emailjs
-  //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-  //       publicKey: 'YOUR_PUBLIC_KEY',
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log('SUCCESS!');
-  //       },
-  //       (error) => {
-  //         console.log('FAILED...', error.text);
-  //       }
-  //     );
-  // };
-
   return (
     <>
-      <form ref={form} className={s.form} onSubmit={handleSubmit(onSubmit)}>
+      {loading && <Loader />}
+      <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={s.formTitle}>Оформіть замовлення</h2>
         <div className={s.formContent}>
           <label className={cn(s.formItem)}>
