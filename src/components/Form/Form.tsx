@@ -4,10 +4,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { toJS } from 'mobx';
 import cn from 'classnames';
 import emailjs from '@emailjs/browser';
+import * as process from 'process';
 
 import { basketStore } from '../../store/basketStore';
 import { Button, Loader } from 'components/index';
-import { schemaForm } from 'utils';
+import { attachmentEmail, schemaForm } from 'utils';
 
 import s from './Form.module.scss';
 
@@ -22,13 +23,14 @@ interface IFormProps {
   onClose?: () => void;
 }
 
-const YOUR_SERVICE_ID = 'service_7c0ztj8';
-const YOUR_TEMPLATE_ID = 'template_47jpln8';
-const YOUR_PUBLIC_KEY = 'mm6obt2InRo6BZElU';
+const YOUR_SERVICE_ID: string = process.env.REACT_APP_YOUR_SERVICE_ID as string;
+const YOUR_TEMPLATE_ID: string = process.env
+  .REACT_APP_YOUR_TEMPLATE_ID as string;
+const YOUR_PUBLIC_KEY = process.env.REACT_APP_YOUR_PUBLIC_KEY as string;
 
 export function Form({ onClose }: IFormProps) {
   const [loading, setLoading] = useState(false);
-  const { items } = basketStore;
+  const { items, totalItems, totalPrice } = basketStore;
 
   useEffect(() => emailjs.init(YOUR_PUBLIC_KEY), []);
 
@@ -45,36 +47,30 @@ export function Form({ onClose }: IFormProps) {
 
   const onSubmit: SubmitHandler<IForm> = async () => {
     const itemInBasket = toJS(items);
-    const emailData = {
-      firstName: getValues('firstName'),
-      lastName: getValues('lastName'),
-      phoneNumber: getValues('phoneNumber'),
-      content: getValues('content'),
-      ...itemInBasket,
-    };
-    // console.log('emailData', JSON.stringify(emailData));
 
     try {
       setLoading(true);
-
+      const itemAttachment2 = itemInBasket.map((item, index) =>
+        attachmentEmail(item, index)
+      );
       const response = await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, {
         firstName: getValues('firstName'),
         lastName: getValues('lastName'),
         phoneNumber: getValues('phoneNumber'),
-        // table:
-        // table: tableContent,
-        // article: itemInBasket[0].article,
-        // name: itemInBasket[0].name,
-        // size: itemInBasket[0].selectedSize,
-        // price: itemInBasket[0].price,
-        // quantity: itemInBasket[0].selectedQuantity,
-        // totalPrice: itemInBasket[0].orderPrice,
+        order1: itemAttachment2[0],
+        order2: itemAttachment2[1],
+        order3: itemAttachment2[2],
+        order4: itemAttachment2[3],
+        order5: itemAttachment2[4],
+        order6: itemAttachment2[5],
+        totalItems,
+        totalPrice,
+        content: getValues('content'),
       });
 
-      console.log('response', response.status);
-      console.log('response', response);
-
-      alert('email successfully sent check inbox');
+      if (response.status === 200) {
+        alert('Дякуємо, замовлення оформлено!. Чекайте на дзвінок оператора.');
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -152,7 +148,7 @@ export function Form({ onClose }: IFormProps) {
             className={s.formButton}
             type={'submit'}
             variant={'contained'}
-            // disabled={!isValid}
+            disabled={loading}
           >
             Відправити
           </Button>
